@@ -12,8 +12,10 @@
 
 <img src="https://raw.githubusercontent.com/companymeerkats/meerkatMusic/refs/heads/master/readMe/Screenshot/listAlbum.jpg" alt="project-screenshot" width="220" height="400/">
 </div>
+<div id="img-wrap">
 <img src="https://raw.githubusercontent.com/companymeerkats/meerkatMusic/refs/heads/master/readMe/Screenshot/album.jpg" alt="project-screenshot" width="220" height="400/">
 
 <img src="https://raw.githubusercontent.com/companymeerkats/meerkatMusic/refs/heads/master/readMe/Screenshot/serch.jpg" alt="project-screenshot" width="220" height="400/">
 
 <img src="https://raw.githubusercontent.com/companymeerkats/meerkatMusic/refs/heads/master/readMe/Screenshot/sortBy.jpg" alt="project-screenshot" width="220" height="400/">
+</div>
