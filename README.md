@@ -6,19 +6,21 @@
 <hr></hr>
 <h2 tabindex="-1" class="heading-element" dir="auto">Download</h2>
 <p dir="auto"><a href="https://raw.githubusercontent.com/companymeerkats/meerkatMusic/refs/heads/master/java/app/release/app-release.apk"><img src="https://github.com/gokadzev/Musify/raw/master/repository_files/get-it-on-github.png" alt="Get it on Github" height="80" style="max-width: 100%; height: auto; max-height: 80px;"></a>
-<a href="https://cafebazaar.ir/app/ir.companymeerkats.myapplication" rel="nofollow"><img src="https://raw.githubusercontent.com/companymeerkats/meerkatMusic/refs/heads/master/readMe/get-cafebazaar-en.png" alt="Get it on Fdroid" height="60" data-canonical-src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" style="max-width: 100%; height: auto; max-height: 100px;"></a></p>
+<a href="https://cafebazaar.ir/app/ir.companymeerkats.myapplication" rel="nofollow"><img src="https://raw.githubusercontent.com/companymeerkats/meerkatMusic/refs/heads/master/readMe/get-cafebazaar-en.png" alt="Get it on Fdroid" height="70" data-canonical-src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" style="max-width: 100%; height: auto; max-height: 70px;"></a></p>
 <hr></hr>
 <h2>Project Screenshots:</h2>
 <div id="img-wrap">
 <img src="https://raw.githubusercontent.com/companymeerkats/meerkatMusic/refs/heads/master/readMe/Screenshot/listSong.jpg" alt="project-screenshot" width="220" height="400/">
 
 <img src="https://raw.githubusercontent.com/companymeerkats/meerkatMusic/refs/heads/master/readMe/Screenshot/listAlbumDark.jpg" alt="project-screenshot" width="220" height="400/">
-
-<img src="https://raw.githubusercontent.com/companymeerkats/meerkatMusic/refs/heads/master/readMe/Screenshot/listAlbum.jpg" alt="project-screenshot" width="220" height="400/">
 </div>
 <div id="img-wrap">
-<img src="https://raw.githubusercontent.com/companymeerkats/meerkatMusic/refs/heads/master/readMe/Screenshot/album.jpg" alt="project-screenshot" width="220" height="400/">
+<img src="https://raw.githubusercontent.com/companymeerkats/meerkatMusic/refs/heads/master/readMe/Screenshot/listAlbum.jpg" alt="project-screenshot" width="220" height="400/">
 
+
+<img src="https://raw.githubusercontent.com/companymeerkats/meerkatMusic/refs/heads/master/readMe/Screenshot/album.jpg" alt="project-screenshot" width="220" height="400/">
+</div>
+<div id="img-wrap">
 <img src="https://raw.githubusercontent.com/companymeerkats/meerkatMusic/refs/heads/master/readMe/Screenshot/serch.jpg" alt="project-screenshot" width="220" height="400/">
 
 <img src="https://raw.githubusercontent.com/companymeerkats/meerkatMusic/refs/heads/master/readMe/Screenshot/sortBy.jpg" alt="project-screenshot" width="220" height="400/">
