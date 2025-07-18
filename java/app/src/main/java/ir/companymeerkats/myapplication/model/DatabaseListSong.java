@@ -7,7 +7,6 @@ import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
 import ir.companymeerkats.myapplication.model.Converters.ConvertersListSong;
-import ir.companymeerkats.myapplication.view.MusicFiles;
 
 @androidx.room.Database(entities = {MusicFiles.class}, version = 2)
 @TypeConverters({ConvertersListSong.class})

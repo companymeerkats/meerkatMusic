@@ -3,12 +3,8 @@ package ir.companymeerkats.myapplication.view;
 import static ir.companymeerkats.myapplication.view.MainActivity.musicFiles;
 
 import android.content.res.Configuration;
-import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,6 +16,8 @@ import com.bumptech.glide.request.RequestOptions;
 import java.util.ArrayList;
 
 import ir.companymeerkats.myapplication.R;
+import ir.companymeerkats.myapplication.model.MusicFiles;
+import ir.companymeerkats.myapplication.view.adapter.AlbumDetailsAdapter;
 
 public class AlbumDetails extends AppCompatActivity {
     RecyclerView recyclerView;

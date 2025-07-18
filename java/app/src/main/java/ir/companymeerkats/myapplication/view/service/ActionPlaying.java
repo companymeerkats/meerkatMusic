@@ -1,4 +1,4 @@
-package ir.companymeerkats.myapplication.view;
+package ir.companymeerkats.myapplication.view.service;
 public interface ActionPlaying {
     void nextClicked(int position);
     void prevClicked(int position);

@@ -1,22 +1,17 @@
 package ir.companymeerkats.myapplication.view;
 
 
-import static ir.companymeerkats.myapplication.view.AlbumDetailsAdapter.albumFiles;
-import static ir.companymeerkats.myapplication.view.AdapterSong.musicFiles;
-import static ir.companymeerkats.myapplication.view.MainActivity.CURRENT_POSITION;
+import static ir.companymeerkats.myapplication.view.adapter.AlbumDetailsAdapter.albumFiles;
+import static ir.companymeerkats.myapplication.view.adapter.AdapterSong.musicFiles;
 import static ir.companymeerkats.myapplication.view.MainActivity.CURRENT_POSITION_TO_FRAG;
 import static ir.companymeerkats.myapplication.view.MainActivity.LIST_DATA_TO_FRAG;
-import static ir.companymeerkats.myapplication.view.MainActivity.MUSIC_LAST_PLAYED;
 import static ir.companymeerkats.myapplication.view.MainActivity.emptyList;
 import static ir.companymeerkats.myapplication.view.MainActivity.musicService;
 import static ir.companymeerkats.myapplication.view.MainActivity.repeatBoolean;
 import static ir.companymeerkats.myapplication.view.MainActivity.shuffleBoolean;
-import static ir.companymeerkats.myapplication.view.MusicService.opennessSongActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -45,25 +40,20 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 import javax.inject.Inject;
 
 import dagger.hilt.android.AndroidEntryPoint;
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
-import io.reactivex.rxjava3.annotations.NonNull;
-import io.reactivex.rxjava3.core.CompletableObserver;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
-import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.functions.Action;
-import io.reactivex.rxjava3.functions.Consumer;
 import io.reactivex.rxjava3.schedulers.Schedulers;
-import ir.companymeerkats.myapplication.Application;
 import ir.companymeerkats.myapplication.R;
+import ir.companymeerkats.myapplication.model.MusicFiles;
+import ir.companymeerkats.myapplication.view.service.ActionPlaying;
 import ir.companymeerkats.myapplication.vm.ViewModelListSong;
 @AndroidEntryPoint
-public class SongActivity extends AppCompatActivity implements ActionPlaying{
+public class SongActivity extends AppCompatActivity implements ActionPlaying {
     TextView songName,singer,currentPositionText,totalDurationText;
     ImageView imageMain,nextBtn,prevBtn,shuffleBtn,repeatBtn,imagePlay;
     SeekBar seekBar;

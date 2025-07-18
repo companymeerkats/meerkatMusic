@@ -1,19 +1,14 @@
-package ir.companymeerkats.myapplication.view;
+package ir.companymeerkats.myapplication.view.adapter;
 
-
-import static ir.companymeerkats.myapplication.view.MainActivity.musicService;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -26,11 +21,13 @@ import com.bumptech.glide.request.RequestOptions;
 import java.util.ArrayList;
 
 import ir.companymeerkats.myapplication.R;
+import ir.companymeerkats.myapplication.model.MusicFiles;
+import ir.companymeerkats.myapplication.view.SongActivity;
 
 
 public class AlbumDetailsAdapter extends RecyclerView.Adapter<AlbumDetailsAdapter.Holder> {
     private Context context;
-    static ArrayList<MusicFiles> albumFiles;
+    public static ArrayList<MusicFiles> albumFiles;
     int imagePlay;
     public AlbumDetailsAdapter(Context context,ArrayList<MusicFiles> albumFiles) {
         this.context = context;
@@ -67,7 +64,7 @@ public class AlbumDetailsAdapter extends RecyclerView.Adapter<AlbumDetailsAdapte
         holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(context,SongActivity.class);
+                Intent intent=new Intent(context, SongActivity.class);
                 intent.putExtra("senderAlbum","albumDetails");
                 intent.putExtra("pos",position);
                 context.startActivity(intent);

@@ -16,7 +16,6 @@ import android.os.IBinder;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
@@ -44,20 +43,25 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 import ir.companymeerkats.myapplication.R;
+import ir.companymeerkats.myapplication.model.MusicFiles;
+import ir.companymeerkats.myapplication.view.fragment.AlbumFragment;
+import ir.companymeerkats.myapplication.view.fragment.SongsFragment;
+import ir.companymeerkats.myapplication.view.service.ActionPlaying;
+import ir.companymeerkats.myapplication.view.service.MusicService;
 import ir.companymeerkats.myapplication.vm.ViewModelListSong;
 import io.reactivex.rxjava3.functions.Consumer;
 
 @AndroidEntryPoint
-public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, ServiceConnection,ActionPlaying {
+public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, ServiceConnection, ActionPlaying {
     ViewPager viewPager;
     TabLayout tabLayout;
     public static  Context context ;
     FrameLayout frameLayout;
     public static final int REQUEST_CODE=1;
-    static ArrayList <MusicFiles> musicFiles;
-    static ArrayList<MusicFiles> albums=new ArrayList<>();
-    static boolean shuffleBoolean=false,repeatBoolean=false;
-    static Uri uri;
+    public static ArrayList <MusicFiles> musicFiles;
+    public static ArrayList<MusicFiles> albums=new ArrayList<>();
+    public static boolean shuffleBoolean=false,repeatBoolean=false;
+    public static Uri uri;
     public static String SORT_PREF="sortOrder";
     public static final String MUSIC_LAST_PLAYED="LAST_PLAYED";
     public static final String MUSIC_FILE="STORED_MUSIC";
@@ -74,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     public static final String CURRENT_POSITION="CURRENT_POSITION";
     public static int CURRENT_POSITION_TO_FRAG=0;
 
-    static MusicService musicService;
+    public static MusicService musicService;
     private static CompositeDisposable compositeDisposable;
     @Inject
     public ViewModelListSong viewModelListSong;

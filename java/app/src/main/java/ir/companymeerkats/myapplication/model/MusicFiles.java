@@ -1,4 +1,4 @@
-package ir.companymeerkats.myapplication.view;
+package ir.companymeerkats.myapplication.model;
 
 import android.net.Uri;
 

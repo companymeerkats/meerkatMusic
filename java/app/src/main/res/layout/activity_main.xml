@@ -43,7 +43,7 @@
             android:id="@+id/frag_now_playing"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:name="ir.companymeerkats.myapplication.view.NowPlayingFragmentBottom"
+            android:name="ir.companymeerkats.myapplication.view.fragment.NowPlayingFragmentBottom"
             tools:layout="@layout/fragment_now_playing_bottom"/>
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

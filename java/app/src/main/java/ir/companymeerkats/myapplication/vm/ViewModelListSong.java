@@ -7,7 +7,7 @@ import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.core.Single;
 import ir.companymeerkats.myapplication.model.DataListSongRepository;
-import ir.companymeerkats.myapplication.view.MusicFiles;
+import ir.companymeerkats.myapplication.model.MusicFiles;
 
 public class ViewModelListSong {
     private final DataListSongRepository dataListSongRepository;

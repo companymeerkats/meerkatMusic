@@ -1,11 +1,9 @@
-package ir.companymeerkats.myapplication.view;
+package ir.companymeerkats.myapplication.view.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,11 +20,13 @@ import com.bumptech.glide.request.RequestOptions;
 import java.util.List;
 
 import ir.companymeerkats.myapplication.R;
+import ir.companymeerkats.myapplication.view.AlbumDetails;
+import ir.companymeerkats.myapplication.model.MusicFiles;
 
 
 public class AdapterAlbum extends RecyclerView.Adapter<AdapterAlbum.Holder> {
     private Context context;
-    private List<MusicFiles> albumFiles;
+    public List<MusicFiles> albumFiles;
     int imagePlay;
     public AdapterAlbum(Context context,List<MusicFiles> albumFiles) {
         this.context = context;
@@ -62,7 +62,7 @@ public class AdapterAlbum extends RecyclerView.Adapter<AdapterAlbum.Holder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(context,AlbumDetails.class);
+                Intent intent=new Intent(context, AlbumDetails.class);
                 intent.putExtra("albumName",albumFiles.get(position).getAlbum());
                 context.startActivity(intent);
             }

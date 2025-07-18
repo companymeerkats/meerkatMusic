@@ -1,4 +1,4 @@
-package ir.companymeerkats.myapplication.view;
+package ir.companymeerkats.myapplication.view.service;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

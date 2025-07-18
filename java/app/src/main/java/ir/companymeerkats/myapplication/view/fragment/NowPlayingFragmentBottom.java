@@ -1,7 +1,5 @@
-package ir.companymeerkats.myapplication.view;
+package ir.companymeerkats.myapplication.view.fragment;
 
-import static ir.companymeerkats.myapplication.view.AdapterSong.musicFiles;
-import static ir.companymeerkats.myapplication.view.MainActivity.CURRENT_POSITION;
 import static ir.companymeerkats.myapplication.view.MainActivity.CURRENT_POSITION_TO_FRAG;
 import static ir.companymeerkats.myapplication.view.MainActivity.LIST_DATA_TO_FRAG;
 import static ir.companymeerkats.myapplication.view.MainActivity.PATH_TO_FRAG;
@@ -12,21 +10,16 @@ import static ir.companymeerkats.myapplication.view.MainActivity.SONG_NAME_TO_FR
 import static ir.companymeerkats.myapplication.view.MainActivity.SONG_PO_TO_FRAG;
 import static ir.companymeerkats.myapplication.view.MainActivity.context;
 import static ir.companymeerkats.myapplication.view.MainActivity.musicService;
-import static ir.companymeerkats.myapplication.view.MusicService.listFiles;
+import static ir.companymeerkats.myapplication.view.service.MusicService.listFiles;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
 import android.media.MediaMetadataRetriever;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,9 +30,8 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.util.Random;
-
 import ir.companymeerkats.myapplication.R;
+import ir.companymeerkats.myapplication.view.SongActivity;
 
 
 public class NowPlayingFragmentBottom extends Fragment  {
@@ -71,7 +63,7 @@ public class NowPlayingFragmentBottom extends Fragment  {
             @Override
             public void onClick(View view) {
                 if(position!=-1){
-                    Intent intent=new Intent(getContext(),SongActivity.class);
+                    Intent intent=new Intent(getContext(), SongActivity.class);
                     intent.putExtra("nowPlaying","");
                     intent.putExtra("pos",position);
                     getContext().startActivity(intent);
@@ -88,7 +80,8 @@ public class NowPlayingFragmentBottom extends Fragment  {
                 if (musicService.mediaPlayer !=null){
                     musicService.setActionPlay();
                 }else {
-                    musicService.playNowPlaying(position,LIST_DATA_TO_FRAG,false);
+                    musicService.setMediaPlayer(position,LIST_DATA_TO_FRAG);
+                    musicService.showNotification(R.drawable.baseline_pause_24);
                     musicService.seekTo(CURRENT_POSITION_TO_FRAG);
                 }
                 if (musicService.isPlaying()){

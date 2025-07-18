@@ -1,4 +1,4 @@
-package ir.companymeerkats.myapplication.view;
+package ir.companymeerkats.myapplication.view.service;
 
 import static ir.companymeerkats.myapplication.Application.ACTION_CANCEL;
 import static ir.companymeerkats.myapplication.Application.ACTION_NEXT;
@@ -7,7 +7,6 @@ import static ir.companymeerkats.myapplication.Application.ACTION_PREV;
 import static ir.companymeerkats.myapplication.Application.channelId2;
 import static ir.companymeerkats.myapplication.view.MainActivity.CURRENT_POSITION;
 import static ir.companymeerkats.myapplication.view.MainActivity.PLAY_SONG;
-import static ir.companymeerkats.myapplication.view.MainActivity.SONG_PO_TO_FRAG;
 
 import android.app.ActivityManager;
 import android.content.ComponentName;
@@ -29,35 +28,27 @@ import android.net.Uri;
 import android.support.v4.media.session.MediaSessionCompat;
 
 import android.os.Binder;
-import android.util.Log;
-import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
-import com.google.gson.Gson;
-
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import ir.companymeerkats.myapplication.R;
+import ir.companymeerkats.myapplication.model.MusicFiles;
+import ir.companymeerkats.myapplication.view.SongActivity;
 
 public class MusicService extends Service implements MediaPlayer.OnCompletionListener{
     private IBinder binder=new BinderMusicService();
     private Handler handlerCurrentPosition=new Handler();
     private Runnable runnableCurrentPosition;
-    String actionName;
-    MediaPlayer mediaPlayer;
-    int runSeekbar=0;
-    int position=-1;
-    Uri uri;
-    static boolean opennessSongActivity;
+    public String actionName;
+    public MediaPlayer mediaPlayer;
+    public int runSeekbar=0;
+    public int position=-1;
+    public Uri uri;
+    public static boolean opennessSongActivity;
     ActionPlaying actionPlaying;
     MediaSession mediaSession;
     public static final String MUSIC_LAST_PLAYED="LAST_PLAYED";
@@ -65,7 +56,7 @@ public class MusicService extends Service implements MediaPlayer.OnCompletionLis
     public static final String SINGER_NAME="SINGER_NAME";
     public static final String SONG_NAME="SONG_NAME";
     public static final String SONG_PO="SONG_PO";
-    static ArrayList<MusicFiles> listFiles=new ArrayList<>();
+    public static ArrayList<MusicFiles> listFiles=new ArrayList<>();
 
     @Override
     public void onCreate() {
@@ -81,7 +72,7 @@ public class MusicService extends Service implements MediaPlayer.OnCompletionLis
 
 
     public class BinderMusicService extends Binder{
-        MusicService getService(){
+        public MusicService getService(){
             return MusicService.this;
         }
     }
@@ -111,25 +102,25 @@ public class MusicService extends Service implements MediaPlayer.OnCompletionLis
     public void setCallBack(ActionPlaying actionPlaying){
         this.actionPlaying=actionPlaying;
     }
-    void start(){
+    public void start(){
         mediaPlayer.start();
     }
-    Boolean isPlaying(){
+    public Boolean isPlaying(){
         return mediaPlayer.isPlaying();
     }
-    void pause(){
+    public void pause(){
         mediaPlayer.pause();
     }
-    int getDuration(){
+    public int getDuration(){
         return mediaPlayer.getDuration();
     }
-    void seekTo(int position){
+    public void seekTo(int position){
         mediaPlayer.seekTo(position);
     }
     public int getCurrentPosition() {
         return mediaPlayer.getCurrentPosition();
     }
-    void setMediaPlayer(int po,ArrayList<MusicFiles> listSong){
+    public void setMediaPlayer(int po,ArrayList<MusicFiles> listSong){
         this.position=po;
         listFiles=listSong;
         uri=Uri.parse(listFiles.get(position).getPath());
@@ -184,7 +175,7 @@ public class MusicService extends Service implements MediaPlayer.OnCompletionLis
         actionPlaying.nextClicked(position);
     }
     public void  showNotification(int playPauseBtu){
-        Intent intent= new Intent(this,SongActivity.class);
+        Intent intent= new Intent(this, SongActivity.class);
         intent.putExtra("test","");
         intent.putExtra("pos",position);
         ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
@@ -265,7 +256,7 @@ public class MusicService extends Service implements MediaPlayer.OnCompletionLis
         byte[] art = retriever.getEmbeddedPicture();
         return art;
     }
-    void setActionPlay(){
+    public void setActionPlay(){
         if (actionPlaying!=null){
             actionPlaying.playClicked(position);
         }
@@ -287,11 +278,11 @@ public class MusicService extends Service implements MediaPlayer.OnCompletionLis
             stopForeground(true);
         }
     }
-    void playNowPlaying(int po ,ArrayList<MusicFiles> listSong,boolean prev){
+    public void playNowPlaying(int po ,ArrayList<MusicFiles> listSong,boolean prev){
             setMediaPlayer(po,listSong);
             showNotification(R.drawable.baseline_pause_24);
     }
-    boolean timePrev(){
+    public boolean timePrev(){
         int mintsCurrentPosition = getCurrentPosition() / 1000 / 60;
         int secondsCurrentPosition = getCurrentPosition() / 1000 - mintsCurrentPosition * 60;
         if (mintsCurrentPosition==0 && secondsCurrentPosition<11){

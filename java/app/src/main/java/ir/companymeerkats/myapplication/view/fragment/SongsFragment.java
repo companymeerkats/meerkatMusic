@@ -1,4 +1,4 @@
-package ir.companymeerkats.myapplication.view;
+package ir.companymeerkats.myapplication.view.fragment;
 
 import static ir.companymeerkats.myapplication.view.MainActivity.musicFiles;
 
@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -22,11 +21,14 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import ir.companymeerkats.myapplication.R;
+import ir.companymeerkats.myapplication.view.MainActivity;
+import ir.companymeerkats.myapplication.model.MusicFiles;
+import ir.companymeerkats.myapplication.view.adapter.AdapterSong;
 
 
 public class SongsFragment extends Fragment implements SearchView.OnQueryTextListener {
     RecyclerView recyclerView;
-    static AdapterSong musicAdapter;
+    public static AdapterSong musicAdapter;
     @SuppressLint({"WrongViewCast", "MissingInflatedId"})
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
