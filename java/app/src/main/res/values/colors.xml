@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gentleOrange">#EFCCA7</color>
+    <color name="gentleOrangeDark">#f6b26b</color>
+    <color name="backPlayingNow">#EFDFDF</color>
+    <color name="green">#009688</color>
+    <color name="brightOrange">#ff9800</color>
+    <color name="Orange">#FB6F41</color>
+    <color name="darkGray">#1e1e1e</color>
+    <color name="gentleBlack">#0d0d0d</color>
+</resources>

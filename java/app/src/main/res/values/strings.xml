@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Meerkat Music</string>
+    <string name="NoSongSelected">No song selected</string>
+    <string name="endList">end List</string>
+</resources>

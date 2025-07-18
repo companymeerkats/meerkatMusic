@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="ViewStyle">
+
+        <attr name="imagePlay" format="integer" />
+        <attr name="textColor" format="color"/>
+        <attr name="backgroundColorNowPlying" format="color"/>
+    </declare-styleable>
+</resources>

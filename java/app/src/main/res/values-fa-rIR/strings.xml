@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">میرکت موزیک</string>
+    <string name="NoSongSelected">اهنگی انتخاب نشده</string>
+    <string name="endList">پایان لیست</string>
+</resources>

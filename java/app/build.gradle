@@ -1,0 +1,59 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.hilt)
+}
+
+android {
+    namespace 'ir.companymeerkats.myapplication'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "ir.companymeerkats.myapplication"
+        minSdk 26
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    //difalt
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    implementation libs.palette
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+    implementation libs.legacy.support.v4
+    implementation libs.glide
+    //    Room
+    implementation libs.room.runtime
+    annotationProcessor libs.room.compiler
+//    Room --- RxJava3
+    implementation libs.room.rxjava3
+//    RxJava
+    implementation libs.rxjava
+//    RxJava -- Android
+    implementation libs.rxandroid
+//    LiveCycle
+    implementation libs.lifecycle.viewmodel
+//    Hilt
+    implementation libs.hilt.android
+    implementation libs.gson
+    annotationProcessor libs.hilt.compiler
+}

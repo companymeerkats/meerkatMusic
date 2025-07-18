@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/backgroundColorNowPlying"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.NowPlayingFragmentBottom">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/gridVS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        android:padding="@dimen/_6dp">
+
+        <ImageView
+            android:id="@+id/musicImgMiniPlayer"
+            android:layout_width="@dimen/_50dp"
+            android:layout_height="@dimen/_50dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="?attr/imagePlay"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/nameSongMiniPlayer"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/NoSongSelected"
+            android:textAlignment="center"
+            android:textSize="@dimen/_16dp"
+            app:layout_constraintEnd_toStartOf="@+id/playButtonMiniPlayer"
+            app:layout_constraintStart_toEndOf="@+id/musicImgMiniPlayer"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/nameSingerMiniPlayer"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textAlignment="center"
+            app:layout_constraintEnd_toStartOf="@+id/playButtonMiniPlayer"
+            app:layout_constraintStart_toEndOf="@+id/musicImgMiniPlayer"
+            app:layout_constraintTop_toBottomOf="@+id/nameSongMiniPlayer" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/playButtonMiniPlayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/backPlayingNow"
+            android:src="@drawable/baseline_play_arrow_24"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
